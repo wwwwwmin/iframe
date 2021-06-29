@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>我是child</div>
+<button id="childBtn">child btn</button>
+</body>
+<script>
+function childFunc(msg) {    
+  console.log("child 的方法：", msg)  
+}  
+
+var btn = document.querySelector("#childBtn")  
+btn.addEventListener('click', function() {    
+  console.log("我是child的button")    
+  console.log("我调用了：")    
+  parent.window.parentFunc('child');   
+})</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>我是parent</div>
+  <button id="parentBtn">parent btn</button> 
+  <iframe src="./child.html" id="frame"></iframe>
+</body>
+
+<script>
+  var btn = document.querySelector("#parentBtn")  
+  btn.addEventListener('click', function() {    
+  console.log("我是parent的button")    
+  console.log("我调用了：")    
+  document.getElementById('frame').contentWindow.childFunc('parent');  
+})
+
+function parentFunc(msg) {    
+  console.log("parent 的方法：", msg)  
+}  
+</script>
+</html>
